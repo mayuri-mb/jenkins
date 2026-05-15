@@ -25,7 +25,6 @@ pipeline {
                     sh """
                         echo "Building"
                         echo "$COURSE"
-                        sleep 10
                     """
                 }     
             }
