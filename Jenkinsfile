@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label "ROBOSHOP"
+            label "roboshop"
         }
     }
     environment {
@@ -44,6 +44,11 @@ pipeline {
             }
         }
         stage('Deploy') {
+            input {
+                message 'Do you want to proceed to Deployment?'
+                ok 'Deploy'
+                submitter 'admin'
+            }
             steps {
                 script {
                     sh """
